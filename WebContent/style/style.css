@@ -1,0 +1,101 @@
+.header
+{
+margin:0;
+min-height:70px;
+color:#FDFEFE;
+top:0;
+width:100%;
+background-color:#004080;
+}
+.header-itemleft
+{
+padding-left:25px;
+float:left;
+}
+.header-itemright
+{
+padding-bottom:25px;
+padding-right:90px;
+float:right;
+color:#FDFEFE;
+text-align:center;
+}
+.body-main
+{
+width:80%;
+margin-top:5px;
+margin-left:30px;
+text-align:center;
+height:800px;
+padding-left:30px;
+}
+.body-main h1,p
+{
+text-align:left;
+}
+
+.style-color
+{
+color:#000501;
+text-align:left;
+}
+
+.body-main h2
+{
+color:#19BB27;
+}
+.h1-left
+{
+text-align:left;
+
+}
+.body-main th
+{
+font-weight:bold;
+}
+.body-main td,th
+{
+padding-bottom:25px;
+
+
+}
+.td-price
+{
+text-align:right;
+}
+.td-name
+{
+text-align:left;
+}
+.empcart
+{
+color:gray;
+text-align:left;
+}
+
+.footer
+{
+margin:0;
+background-color:#C5C1C1;
+width:100%;
+min-height:50px;
+color:#FDFEFE;
+text-align:left;
+}
+.center {
+  float:left;
+  margin:10px;
+  padding-bottom:20px;
+height:30px;
+width:30px;
+}
+.alert
+{
+text-align:center;
+padding-bottom:10px;
+color:#11CD22  ;
+display:block;
+
+}
+
+}

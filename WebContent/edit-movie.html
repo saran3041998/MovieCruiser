@@ -1,0 +1,90 @@
+<!Doctype html>
+<html>
+<head>
+<title>Edit Movie</title>
+<script type="text/javascript" src="js/script.js">
+
+</script>
+<link rel="stylesheet" href="style/style.css"/>
+
+<style type="text/css">
+.body-main th
+{
+text-align:left;
+padding-top:20px;
+}
+.body-main td
+{
+text-align:left;
+}
+button[type="submit"]
+{
+padding-top:15px;
+padding-bottom:15px;
+padding-left:15px;
+padding-right:15px;
+background-color:#004080;
+color:white;
+border:0;
+
+}              
+</style>
+</head>
+<body>
+<header class="header container-fluid">
+<h2 class="header-itemleft">Movie Crusier</h2>
+<img src="images/movie-crusier.png" class="center">
+<a class="header-itemright" href="movie-list-admin.html"  style="margin:15px">Movies</a>
+</header>
+
+<section class="body-main" style="overflow-x:auto;">
+     
+                <h1 class="style-color">Edit Movie</h1>
+                <form name="editMenuForm" action="#" method="post" onsubmit="validateMenuItem()">
+                <table style="width:100%" id="">
+                <tr><th colspan="4"><label for="mname">Title<th></tr><br>
+                <tr><td colspan="4"><input type="text" style="width:1250px;height:30px;" id="mname" style="width:50%" name="mname"></td></tr>
+                <tr>
+                <th><label for="price">Gross($)</th>
+                <th><label for="active">Active</th>
+                <th><label for="launch">Date of Launch</th>
+                <th><label for="category">Genre</th>
+                </tr>
+
+                <tr>
+                <td><input type="text" name="price" id="price"></td>
+                <td><input type="radio" name="available" value="yes" id="active">Yes
+                <input type="radio" name="available" value="no" id="active">No
+                </td>
+                <td><input type="date" name="launch" id="launch"></td>
+                <td>
+                <select name="category" id="category">
+                <option value="empty">    </option>
+                <option value="Science Fiction">Science Fiction</option>
+                <option value="Superhero">Superhero</option>
+                <option value="Romance">Romance</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Thriller">Thriller</option>
+                </select></td>
+                </tr>
+
+                <tr>
+                <td><input type="checkbox" name="freedelivery" name="free" checked>
+                <label>Has Teaser</label><td>
+                </tr>
+
+                <tr>
+                <td><a href="edit-movie-status.html" style="color:white;"><button  type="submit" name="save" value="Save">Save</a></td></button>
+                </tr>
+
+
+               </table>
+        </form>
+</section>
+
+<footer class="footer container-fluid">
+                <p>&nbsp;&nbsp;Copyright &copy; 2019</p>
+</footer>
+</body>
+</html>
