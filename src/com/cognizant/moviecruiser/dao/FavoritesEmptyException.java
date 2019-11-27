@@ -26,7 +26,8 @@ public class FavoritesEmptyException extends Exception {
 	}
 
 	/**
-	 * @param message the message to set
+	 * @param message
+	 *            the message to set
 	 */
 	public void setMessage(String message) {
 		this.message = message;

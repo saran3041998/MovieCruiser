@@ -5,7 +5,7 @@ function validateMenuItem()
                 var price=document.forms["editMenuForm"]["price"].value;
                 var dol=document.forms["editMenuForm"]["launch"].value;
                 var cate=document.forms["editMenuForm"]["category"].value;
-                alert("invalidate forms");
+                
                 if(title== "")
                 { 
                 alert("Title is required");

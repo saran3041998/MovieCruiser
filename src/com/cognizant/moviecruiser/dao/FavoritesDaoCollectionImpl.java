@@ -6,11 +6,10 @@ package com.cognizant.moviecruiser.dao;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.cognizant.moviecruiser.model.Favoriutes;
 import com.cognizant.moviecruiser.model.MovieList;
-
-
 
 /**
  * @Created By Saranya 760862
@@ -19,96 +18,95 @@ import com.cognizant.moviecruiser.model.MovieList;
 public class FavoritesDaoCollectionImpl implements FavoritesDao {
 	private static HashMap<Long, Favoriutes> userFavorites;
 
-    public FavoritesDaoCollectionImpl() {
+	public FavoritesDaoCollectionImpl() {
 
-          if (userFavorites == null) {
-                userFavorites = new HashMap<Long, Favoriutes>();
-                try {
+		if (userFavorites == null) {
+			userFavorites = new HashMap<Long, Favoriutes>();
+			try {
 
-                      List<MovieList> movieList= new ArrayList<MovieList>();
+				List<MovieList> movieList = new ArrayList<MovieList>();
 
-                      Favoriutes favorites = new Favoriutes(movieList, 0);
+				Favoriutes favorites = new Favoriutes(movieList, 0);
 
-                } catch (Exception e) {
-                      e.printStackTrace();
-                }
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
-          }
-    }
+		}
+	}
 
 	@Override
 	public void addMovieList(long userId, long movieId) {
 		// TODO Auto-generated method stub
 		List<MovieList> movieList;
-        MovieListDaoCollectionImpl menuItemDaoCollectionImpl = new MovieListDaoCollectionImpl();
-        MovieListDao menuItemDao = menuItemDaoCollectionImpl;
-        // MenuItem mitem = menuItemDao.getMenuItem(menuItemId);
-        Long userid = new Long(userId);
-        MovieList menuItem = menuItemDao.getMovie(movieId);
-        if (userFavorites.containsKey(userId)) {
-        	Favoriutes cart = userFavorites.get(userId);
-              movieList = cart.getMovieList();
-             movieList.add(menuItem);
-              cart.setMovieList(movieList);
-              // cart.setTotal(cart.getTotal() + menuItem.getPrice());
-              userFavorites.put(userId, cart);
+		MovieListDaoCollectionImpl movielistdaocollectionimpl = new MovieListDaoCollectionImpl();
+		MovieListDao movieListDao = movielistdaocollectionimpl;
+		// MenuItem mitem = menuItemDao.getMenuItem(menuItemId);
+		Long userid = new Long(userId);
+		MovieList menuItem = movieListDao.getMovie(movieId);
+		if (userFavorites.containsKey(userId)) {
+			Favoriutes favotites = userFavorites.get(userId);
+			movieList = favotites.getMovieList();
+			movieList.add(menuItem);
+			favotites.setMovieList(movieList);
+			// cart.setTotal(cart.getTotal() + menuItem.getPrice());
+			userFavorites.put(userId, favotites);
 
-        } else {
-              movieList = new ArrayList<MovieList>();
-              movieList.add(menuItem);
+		} else {
+			movieList = new CopyOnWriteArrayList<MovieList>();
+			movieList.add(menuItem);
 
-              Favoriutes cart = new Favoriutes(movieList, (int)menuItem.getId());
-              userFavorites.put(userId, cart);
+			Favoriutes favorites = new Favoriutes(movieList, (int) menuItem.getId());
+			userFavorites.put(userId, favorites);
 
-        }
-		
+		}
+
 	}
 
-	
 	@Override
 	public List<MovieList> getAllFavoritesItem(long userId)
 			throws FavoritesEmptyException {
 		// TODO Auto-generated method stub
 
-		Favoriutes cart = userFavorites.get(new Long(userId));
-        List<MovieList> menuItemList = cart.getMovieList();
-        if (menuItemList == null || menuItemList.size() == 0) {
-              throw new FavoritesEmptyException("Cart is empty");
-        }
-     int count=0;
-        for (MovieList menuItem : menuItemList) {
-             count=count+1;
+		Favoriutes favorites = userFavorites.get(new Long(userId));
+		List<MovieList> movieList = favorites.getMovieList();
+		if (movieList == null || movieList.size() == 0) {
+			throw new FavoritesEmptyException("Cart is empty");
+		}
+		int count = 0;
+		for (MovieList menuItem : movieList) {
+			count = count + 1;
 
-        }
-        cart.setNoOffavorites(count);
-        System.out.println(count);
-        // TODO Auto-generated method stub
-        return menuItemList;
+		}
+		favorites.setNoOffavorites(count);
+		System.out.println(count);
+		// TODO Auto-generated method stub
+		return movieList;
 
 	}
 
-	/* (non-Javadoc)
-	 * @see com.cognizant.moviecruiser.dao.FavoritesDao#removeFavoritesItem(long, long)
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see
+	 * com.cognizant.moviecruiser.dao.FavoritesDao#removeFavoritesItem(long,
+	 * long)
 	 */
 	@Override
 	public void removeFavoritesItem(long userId, long movieId) {
 		// TODO Auto-generated method stub
 		if (userFavorites.containsKey(userId)) {
 			Favoriutes cart = userFavorites.get(userId);
-            List<MovieList> menuItemList = cart.getMovieList();
-            for (MovieList menuItem : menuItemList) {
-                  if (menuItem.getId() == movieId) {
-                        menuItemList.remove(menuItem);
-                  }
-            }
-            cart.setMovieList(menuItemList);
-            userFavorites.put(userId, cart);
-            
-      }
-}
-		
+			List<MovieList> movieList = cart.getMovieList();
+			for (MovieList movieItem : movieList) {
+				if (movieItem.getId() == movieId) {
+					movieList.remove(movieItem);
+				}
+			}
+			cart.setMovieList(movieList);
+			userFavorites.put(userId, cart);
+
+		}
 	}
 
-	
-	
-
+}

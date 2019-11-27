@@ -5,7 +5,6 @@ package com.cognizant.moviecruiser.model;
 
 import java.util.List;
 
-
 /**
  * @Created By Saranya 760862
  *
@@ -13,12 +12,14 @@ import java.util.List;
 public class Favoriutes {
 	private List<MovieList> movieList;
 	private int noOffavorites;
+
 	/**
 	 * @return the movieList
 	 */
 	public List<MovieList> getMovieList() {
 		return movieList;
 	}
+
 	/**
 	 * @param movieList
 	 * @param noOffavorites
@@ -28,7 +29,10 @@ public class Favoriutes {
 		this.movieList = movieList;
 		this.noOffavorites = noOffavorites;
 	}
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -36,7 +40,10 @@ public class Favoriutes {
 		return "Favoriutes [movieList=" + movieList + ", noOffavorites="
 				+ noOffavorites + "]";
 	}
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -48,7 +55,10 @@ public class Favoriutes {
 		result = prime * result + noOffavorites;
 		return result;
 	}
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -69,20 +79,25 @@ public class Favoriutes {
 			return false;
 		return true;
 	}
+
 	/**
-	 * @param movieList the movieList to set
+	 * @param movieList
+	 *            the movieList to set
 	 */
 	public void setMovieList(List<MovieList> movieList) {
 		this.movieList = movieList;
 	}
+
 	/**
 	 * @return the noOffavorites
 	 */
 	public int getNoOffavorites() {
 		return noOffavorites;
 	}
+
 	/**
-	 * @param noOffavorites the noOffavorites to set
+	 * @param noOffavorites
+	 *            the noOffavorites to set
 	 */
 	public void setNoOffavorites(int noOffavorites) {
 		this.noOffavorites = noOffavorites;

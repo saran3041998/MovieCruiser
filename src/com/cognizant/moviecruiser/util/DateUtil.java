@@ -12,9 +12,9 @@ import java.util.Date;
  *
  */
 public class DateUtil {
-	public static Date convertToDate(String date)throws ParseException {
+	public static Date convertToDate(String date) throws ParseException {
 		// TODO Auto-generated method stub
 		return new SimpleDateFormat("dd/MM/yyyy").parse(date);
 
-}
+	}
 }

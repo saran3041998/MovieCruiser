@@ -10,8 +10,9 @@ import java.util.Date;
  *
  */
 public class MovieList {
-	
+
 	private long id;
+
 	/**
 	 * @param id
 	 * @param title
@@ -32,25 +33,37 @@ public class MovieList {
 		this.genre = genre;
 		this.hasTeaser = hasTeaser;
 	}
+
+	/**
+	 * 
+	 */
+	public MovieList() {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * @return the id
 	 */
 	public long getId() {
 		return id;
 	}
+
 	/**
-	 * @param id the id to set
+	 * @param id
+	 *            the id to set
 	 */
 	public void setId(long id) {
 		this.id = id;
 	}
+
 	private String title;
-	
+
 	private long box_office;
 	private boolean active;
 	private Date dateOfLaunch;
 	private String genre;
 	private boolean hasTeaser;
+
 	/**
 	 * @param title
 	 * @param box_office
@@ -59,7 +72,7 @@ public class MovieList {
 	 * @param genre
 	 * @param hasTeaser
 	 */
-	
+
 	@Override
 	public String toString() {
 		return "MovieList [id=" + id + ", title=" + title + ", box_office="
@@ -67,7 +80,10 @@ public class MovieList {
 				+ dateOfLaunch + ", genre=" + genre + ", hasTeaser="
 				+ hasTeaser + "]";
 	}
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#hashCode()
 	 */
 	@Override
@@ -84,13 +100,18 @@ public class MovieList {
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		return result;
 	}
+
 	/**
-	 * @param hasTeaser the hasTeaser to set
+	 * @param hasTeaser
+	 *            the hasTeaser to set
 	 */
 	public void setHasTeaser(boolean hasTeaser) {
 		this.hasTeaser = hasTeaser;
 	}
-	/* (non-Javadoc)
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
 	@Override
@@ -128,6 +149,7 @@ public class MovieList {
 			return false;
 		return true;
 	}
+
 	/**
 	 * @param title
 	 * @param box_office
@@ -136,75 +158,92 @@ public class MovieList {
 	 * @param genre
 	 * @param hasTeaser
 	 */
-	
+
 	/**
 	 * @return the title
 	 */
-	public  String getTitle() {
+	public String getTitle() {
 		return title;
 	}
+
 	/**
-	 * @param title the title to set
+	 * @param title
+	 *            the title to set
 	 */
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	/**
 	 * @return the box_office
 	 */
 	public long getBox_office() {
 		return box_office;
 	}
+
 	/**
-	 * @param f the box_office to set
+	 * @param f
+	 *            the box_office to set
 	 */
 	public void setBox_office(long f) {
 		this.box_office = f;
 	}
+
 	/**
 	 * @return the active
 	 */
 	public boolean isActive() {
 		return active;
 	}
+
 	/**
-	 * @param active the active to set
+	 * @param active
+	 *            the active to set
 	 */
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+
 	/**
 	 * @return the dateOfLaunch
 	 */
 	public Date getDateOfLaunch() {
 		return dateOfLaunch;
 	}
+
 	/**
-	 * @param dateOfLaunch the dateOfLaunch to set
+	 * @param dateOfLaunch
+	 *            the dateOfLaunch to set
 	 */
 	public void setDateOfLaunch(Date dateOfLaunch) {
 		this.dateOfLaunch = dateOfLaunch;
 	}
+
 	/**
 	 * @return the genre
 	 */
 	public String getGenre() {
 		return genre;
 	}
+
 	/**
-	 * @param genre the genre to set
+	 * @param genre
+	 *            the genre to set
 	 */
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
+
 	/**
 	 * @return the hasTeaser
 	 */
 	public Boolean getHasTeaser() {
 		return hasTeaser;
 	}
+
 	/**
-	 * @param hasTeaser the hasTeaser to set
+	 * @param hasTeaser
+	 *            the hasTeaser to set
 	 */
 	public void setHasTeaser(Boolean hasTeaser) {
 		this.hasTeaser = hasTeaser;
